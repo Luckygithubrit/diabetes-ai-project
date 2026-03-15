@@ -2,7 +2,10 @@ import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 
-df = pd.read_csv("dataset/diabetes.csv")
+import os
+
+data_path = os.path.join("dataset", "diabetes.csv")
+df = pd.read_csv(data_path)
 
 X = df.drop("Outcome", axis=1)
 y = df["Outcome"]
