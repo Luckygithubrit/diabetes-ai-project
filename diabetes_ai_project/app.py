@@ -1,10 +1,14 @@
 import pandas as pd
+import os
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 
-import os
+# import pandas as pd
 
-data_path = os.path.join("dataset", "diabetes.csv")
+
+base_dir = os.path.dirname(__file__)
+data_path = os.path.join(base_dir, "dataset", "diabetes.csv")
+
 df = pd.read_csv(data_path)
 
 X = df.drop("Outcome", axis=1)
