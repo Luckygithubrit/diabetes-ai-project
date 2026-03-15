@@ -1,5 +1,14 @@
 import pandas as pd
 import os
+import streamlit as st
+import pandas as pd
+import numpy as np
+import os
+import pickle
+
+st.title("AI Diabetes Prediction System")
+
+st.write("Enter patient medical details")
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 
@@ -19,9 +28,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 model = LogisticRegression(max_iter=1000)
 model.fit(X_train, y_train)
 
-st.title("AI Diabetes Prediction System")
 
-st.write("Enter patient medical details")
 
 preg = st.number_input("Pregnancies", 0, 20)
 glucose = st.number_input("Glucose Level", 0, 200)
