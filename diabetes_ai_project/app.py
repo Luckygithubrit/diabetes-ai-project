@@ -6,6 +6,10 @@ import numpy as np
 import os
 import pickle
 import io
+from reportlab.lib.pagesizes import letter
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer     
+
 
 st.title("AI Diabetes Prediction System")
 
