@@ -1,13 +1,16 @@
-import streamlit as st
-import numpy as np
-import pickle
-import io
-# from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
-from reportlab.lib.styles import getSampleStyleSheet
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
 
-# Load trained model
-model = pickle.load(open("model/diabetes_model.pkl", "rb"))
+df = pd.read_csv("dataset/diabetes.csv")
+
+X = df.drop("Outcome", axis=1)
+y = df["Outcome"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+model = LogisticRegression(max_iter=1000)
+model.fit(X_train, y_train)
 
 st.title("AI Diabetes Prediction System")
 
