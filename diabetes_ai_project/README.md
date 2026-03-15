@@ -7,6 +7,7 @@ This is a simple healthcare AI project that predicts diabetes risk using Machine
 - Scikit-learn
 - Streamlit
 - Pandas
+- report lab
 
 ## Project Structure
 diabetes_ai_project/
